@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 8080;
+const port = process.env.PORT || 3000;
 
 const mongoose = require("mongoose");
 mongoose.connect(
@@ -18,7 +18,7 @@ const cors = require("cors");
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.send("This is the Notes App Server Homepage.");
+  res.send("This is the Notes App Server.");
 });
 
 // ROUTERS AND MODELS
