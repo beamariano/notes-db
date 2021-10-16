@@ -1,4 +1,4 @@
-# Notes App
+# Notes App (Backend)
 
 Technologies used: MongoDB Atlas, NodeJS, ExpressJS
 
