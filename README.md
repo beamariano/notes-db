@@ -29,10 +29,6 @@ npm install
 - mongoose
 - nodemon
 
-## Installation
-
-npm install
-
 ## To Start Application
 
 node index.js
