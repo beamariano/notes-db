@@ -18,7 +18,8 @@ const cors = require("cors");
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.send("This is the Notes App Server.");
+  return "hello";
+  // res.send("This is the Notes App Server.");
 });
 
 // ROUTERS AND MODELS
