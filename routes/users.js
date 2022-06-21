@@ -16,31 +16,31 @@ router.post("/email-exists", (req, res) => {
     }
   });
 });
-router.post("/register", async (req, res) => {
-  let hashedPassword = await bcrypt.hash(req.body.password, 10);
-  let user = {
-    userName: req.body.userName,
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    status: req.body.status,
-    password: hashedPassword,
-    image: req.body.image,
-    birthday: req.body.birthday,
-    gender: req.body.gender,
-    city: req.body.city,
-    country: req.body.container,
-    lastUpdated: req.body.lastUpdated,
-    dateCreated: req.body.dateCreated,
-    // name: req.body.name,
-    // email: req.body.email,
-    // password: hashedPassword,
-  };
-  let newUser = new User(user);
-  newUser.save().then((data) => {
-    res.send("New user created");
-  });
-});
+// router.post("/register", async (req, res) => {
+//   let hashedPassword = await bcrypt.hash(req.body.password, 10);
+//   let user = {
+//     userName: req.body.userName,
+//     firstName: req.body.firstName,
+//     lastName: req.body.lastName,
+//     email: req.body.email,
+//     status: req.body.status,
+//     password: hashedPassword,
+//     image: req.body.image,
+//     birthday: req.body.birthday,
+//     gender: req.body.gender,
+//     city: req.body.city,
+//     country: req.body.container,
+//     lastUpdated: req.body.lastUpdated,
+//     dateCreated: req.body.dateCreated,
+//     // name: req.body.name,
+//     // email: req.body.email,
+//     // password: hashedPassword,
+//   };
+//   let newUser = new User(user);
+//   newUser.save().then((data) => {
+//     res.send("New user created");
+//   });
+// });
 router.post("/login", (req, res) => {
   User.findOne({ email: req.body.email }).then(async (data) => {
     if (data) {
